@@ -6,3 +6,4 @@ nuget FSharp.Core
 nuget xunit
 nuget FsUnit.xUnit
 nuget xunit.runner.console
+nuget FSharp.Compiler.Tools

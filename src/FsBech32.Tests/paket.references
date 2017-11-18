@@ -1,3 +1,4 @@
 FSharp.Core
 xunit
 FsUnit.xUnit
+FSharp.Compiler.Tools
