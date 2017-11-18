@@ -8,7 +8,7 @@ open System.Runtime.InteropServices
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [<assembly: AssemblyTitle("FsBech32")>]
-[<assembly: AssemblyDescription("")>]
+[<assembly: AssemblyDescription("A .NET implementation of Bech32 (BIP 173), written in F#. Edit")>]
 [<assembly: AssemblyConfiguration("")>]
 [<assembly: AssemblyCompany("")>]
 [<assembly: AssemblyProduct("FsBech32")>]
@@ -34,8 +34,8 @@ open System.Runtime.InteropServices
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [<assembly: AssemblyVersion("1.0.*")>]
-[<assembly: AssemblyVersion("1.0.0.0")>]
-[<assembly: AssemblyFileVersion("1.0.0.0")>]
+[<assembly: AssemblyVersion("0.1.0.0")>]
+[<assembly: AssemblyFileVersion("0.1.0.0")>]
 
 do
     ()

@@ -1,0 +1,6 @@
+type project
+id FsBech32
+licenseUrl https://github.com/zenprotocol/FsBech32/blob/master/LICENSE
+authors Zen Protocol
+projectUrl https://github.com/zenprotocol/FsBech32
+tags Bech32 Base32 Bitcoin Zen Protocol 

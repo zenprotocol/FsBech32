@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="paket.references" />
+    <Content Include="paket.template" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
