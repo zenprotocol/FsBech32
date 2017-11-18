@@ -40,6 +40,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
+    <Compile Include="Helper.fs" />
+    <Compile Include="Base16.fs" />
+    <Compile Include="Base32.fs" />
     <Compile Include="FsBech32.fs" />
   </ItemGroup>
   <ItemGroup>
