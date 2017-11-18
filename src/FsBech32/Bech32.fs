@@ -74,4 +74,4 @@ let toWords bytes =
     | None -> failwith "toWords failed" 
     
 let fromWords words = 
-    convertBits words 5 8    
+    convertBits words 5 8 false   

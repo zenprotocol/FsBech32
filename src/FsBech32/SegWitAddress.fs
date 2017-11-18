@@ -7,7 +7,7 @@ let decode addr : option<string * byte * array<byte> > =
         if (hrp <> "tb" && hrp <> "bc") || data.Length = 0 then
             None
         else
-            let bytes = Bech32.fromWords data.[1..] false
+            let bytes = Bech32.fromWords data.[1..]
             match bytes with
             | None -> None
             | Some decoded ->
