@@ -3,3 +3,6 @@ source https://www.nuget.org/api/v2
 framework: net45
 
 nuget FSharp.Core
+nuget xunit
+nuget FsUnit.xUnit
+nuget xunit.runner.console

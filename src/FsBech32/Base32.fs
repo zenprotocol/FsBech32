@@ -1,4 +1,4 @@
-module Base32
+module FsBech32.Base32
 
 open FsBech32.Helper
 

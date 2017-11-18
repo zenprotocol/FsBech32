@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{DAD02A
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FsBech32", "FsBech32\FsBech32.fsproj", "{40721A3B-3D88-4598-AE34-DD6DB6A438A9}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FsBech32.Tests", "FsBech32.Tests\FsBech32.Tests.fsproj", "{867C4407-1D69-406F-B6E5-3392A579F457}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +22,10 @@ Global
 		{40721A3B-3D88-4598-AE34-DD6DB6A438A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{40721A3B-3D88-4598-AE34-DD6DB6A438A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{40721A3B-3D88-4598-AE34-DD6DB6A438A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{867C4407-1D69-406F-B6E5-3392A579F457}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{867C4407-1D69-406F-B6E5-3392A579F457}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{867C4407-1D69-406F-B6E5-3392A579F457}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{867C4407-1D69-406F-B6E5-3392A579F457}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
