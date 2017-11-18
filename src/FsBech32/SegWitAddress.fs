@@ -14,9 +14,7 @@ let decode addr : option<string * byte * array<byte> > =
                 let decodedLength = decoded.Length
                 if decodedLength < 2 || decodedLength > 40 then 
                     None 
-                else
-                    printfn "%A" data.[0]
-                
+                else                                    
                     if data.[0] > 16uy then 
                         None
                     else

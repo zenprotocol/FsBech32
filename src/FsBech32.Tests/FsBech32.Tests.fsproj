@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bech32Tests.fs" />
+    <Content Include="app.config" />
     <Content Include="paket.references" />
   </ItemGroup>
   <ItemGroup>
