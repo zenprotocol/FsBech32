@@ -1,9 +1,8 @@
 source https://www.nuget.org/api/v2
 
-framework: net45
+framework: auto-detect
 
 nuget FSharp.Core
 nuget xunit
 nuget FsUnit.xUnit
 nuget xunit.runner.console
-nuget FSharp.Compiler.Tools
