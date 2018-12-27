@@ -2,8 +2,8 @@ module FsBech32.Base16
 
 open FsBech32.Helper
 
-let charset = "0123456789abcdef"
-
+let [<Literal>] Charset = "0123456789abcdef"
+    
 let internal charsetRev = [|
     255uy; 255uy; 255uy; 255uy; 255uy; 255uy; 255uy; 255uy; 255uy; 255uy; 255uy; 255uy; 255uy; 255uy; 255uy; 255uy;
     255uy; 255uy; 255uy; 255uy; 255uy; 255uy; 255uy; 255uy; 255uy; 255uy; 255uy; 255uy; 255uy; 255uy; 255uy; 255uy;
@@ -19,18 +19,13 @@ let encode (data:array<byte>) =
     match convertBits data 8 4 false with
     | None -> failwith "failed to converts bits"
     | Some data ->         
-        Array.map (fun b -> charset.[int b]) data
+        Array.map (fun b -> Charset.[int b]) data
         |> System.String 
         
-let decode (base16:string) =
-    // TODO: checks that all in range
-    // TODO: checks that all same case
-    // TODO: convert to lower case
- 
-    let data = 
-        Seq.map (fun (c:char) -> byte (charsetRev.[int c])) base16
-        |> Array.ofSeq
-    
-    match convertBits data 4 8 false with
-    | None -> failwith "failed to converts bits"
-    | Some data -> Some data
+let decode: string -> option<byte[]> = 
+    Seq.map (fun c -> byte (charsetRev.[int c]))
+    >> Array.ofSeq
+    >> (fun data -> convertBits data 4 8 false)
+    >> function 
+       | None -> failwith "failed to converts bits"
+       | Some data -> Some data

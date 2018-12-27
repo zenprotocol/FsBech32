@@ -2,7 +2,7 @@ module FsBech32.Base32
 
 open FsBech32.Helper
 
-let charset = "qpzry9x8gf2tvdw0s3jn54khce6mua7l"
+let Charset = "qpzry9x8gf2tvdw0s3jn54khce6mua7l"
 
 let internal charsetRev = [|
     255uy; 255uy; 255uy; 255uy; 255uy; 255uy; 255uy; 255uy; 255uy; 255uy; 255uy; 255uy; 255uy; 255uy; 255uy; 255uy;
@@ -18,8 +18,8 @@ let internal charsetRev = [|
 let encode (data:array<byte>) =
     match convertBits data 8 5 true with
         | None -> failwith "failed to converts bits"
-        | Some data ->         
-            Array.map (fun b -> charset.[int b]) data
+        | Some data ->
+            Array.map (fun b -> Charset.[int b]) data
             |> System.String    
     
 let decode (base32:string) =     

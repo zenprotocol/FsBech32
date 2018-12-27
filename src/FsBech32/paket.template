@@ -1,6 +1,6 @@
 type project
 id FsBech32
-version 0.1.1
+version 0.1.2
 description
 	A .NET implementation of Bech32 (BIP 173), written in F#
 licenseUrl https://github.com/zenprotocol/FsBech32/blob/master/LICENSE

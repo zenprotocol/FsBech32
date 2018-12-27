@@ -34,7 +34,7 @@ let private createChecksum hrp data : array<byte> =
 
 let encode hrp data : string =
     let combined = Array.append data (createChecksum hrp data)
-    hrp + "1" + (Array.map (fun c -> Base32.charset.[int c]) combined |> System.String)
+    hrp + "1" + (Array.map (fun c -> Base32.Charset.[int c]) combined |> System.String)
 
 let decode bech : option< string * array<byte> > =
     try 
@@ -52,7 +52,7 @@ let decode bech : option< string * array<byte> > =
             else
                 let words = bech.[(pos+1)..]           
                 let in_charset = 
-                    words |> String.forall (fun c -> Seq.contains c Base32.charset)
+                    words |> String.forall (fun c -> Seq.contains c Base32.Charset)
                     
                 let longEnough = words.Length >= 6                
                                                         
