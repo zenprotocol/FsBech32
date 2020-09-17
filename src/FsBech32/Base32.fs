@@ -15,18 +15,22 @@ let internal charsetRev = [|
      1uy;  0uy;  3uy; 16uy; 11uy; 28uy; 12uy; 14uy;  6uy;  4uy;  2uy; 255uy; 255uy; 255uy; 255uy; 255uy
 |]
 
+let tryEncode (data:array<byte>): string option =
+    let inner data =
+        data
+        |> Array.map (fun b -> Charset.[int b]) 
+        |> System.String
+            
+    convertBits data 8 5 true
+    |> Option.map inner
+
 let encode (data:array<byte>) =
-    match convertBits data 8 5 true with
-        | None -> failwith "failed to converts bits"
-        | Some data ->
-            Array.map (fun b -> Charset.[int b]) data
-            |> System.String    
+    tryEncode data
+    |> Option.defaultWith (fun () -> failwith "failed to converts bits")
     
 let decode (base32:string) =     
     let data = 
         Seq.map (fun c -> byte (charsetRev.[int c])) base32
         |> Array.ofSeq
     
-    match convertBits data 5 8 false with
-    | None -> failwith "failed to converts bits"
-    | Some data -> Some data
+    convertBits data 5 8 false
