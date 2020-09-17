@@ -68,10 +68,13 @@ let decode bech : option< string * array<byte> > =
     with 
         | _ -> None
 
+
+let tryToWords bytes : array<byte> option =
+    convertBits bytes 8 5 true
+
 let toWords bytes = 
-    match convertBits bytes 8 5 true with
-    | Some words -> words
-    | None -> failwith "toWords failed" 
+    tryToWords bytes
+    |> Option.defaultWith (fun () -> failwith "toWords failed")
     
 let fromWords words = 
     convertBits words 5 8 false   

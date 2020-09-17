@@ -23,8 +23,14 @@ let decode addr : option<string * byte * array<byte> > =
                         else 
                             Some (hrp, data.[0], decoded)
 
+
+let tryEncode hrp witver witprog : string option =
+    let inner words =
+        Bech32.encode hrp (Array.append [|witver|] words)
+    
+    Bech32.tryToWords witprog
+    |> Option.map inner
+    
 let encode hrp witver witprog : string =
     let words = Bech32.toWords witprog        
     Bech32.encode hrp (Array.append [|witver|] words)        
-
-
