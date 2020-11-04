@@ -1,7 +1,7 @@
 module FsBech32.Tests.Bech32Tests
 
-open Xunit
-open FsUnit.Xunit
+open NUnit.Framework
+open FsUnit
 open FsBech32
 
 let validBech32 = 
@@ -31,7 +31,7 @@ let invalidBech32 =
         "1qzzfhee";
     ]    
  
-[<Fact>]
+[<Test>]
 let ``valid bech32 strings``() =
     List.iter (fun bech32 -> 
         match Bech32.decode bech32 with
@@ -39,7 +39,7 @@ let ``valid bech32 strings``() =
              Bech32.encode hrp data |> should equal (bech32.ToLower())
         | None -> failwithf "invalid bech32 %s" bech32) validBech32             
 
-[<Fact>]
+[<Test>]
 let ``invalid bech32 strings``() =
     List.iter (fun bech32 ->
         Bech32.decode bech32 |> should equal None) invalidBech32        

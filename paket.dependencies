@@ -1,8 +1,7 @@
 source https://www.nuget.org/api/v2
 
-framework: auto-detect
-
-nuget FSharp.Core
-nuget xunit
-nuget FsUnit.xUnit
-nuget xunit.runner.console
+framework: 47
+nuget FSharp.Core 4.3.4
+nuget NUnit
+nuget FsUnit
+nuget FSharpx.Extras

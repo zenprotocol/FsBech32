@@ -1,0 +1,9 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=_002FUsers_002Fdavidbrima_002FZen_002DProtocol_002DTesting_002DDevelopment_002FFsBech32_002Fpackages_002FFSharpx_002EExtras_002Flib_002Fnetstandard2_002E0_002FFSharpx_002EExtras_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=_002FUsers_002Fdavidbrima_002FZen_002DProtocol_002DTesting_002DDevelopment_002FFsBech32_002Fpackages_002FFsUnit_002Flib_002Fnetstandard2_002E0_002FFsUnit_002ENUnit_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=16e17a15_002D15df_002D4269_002D83b1_002D9a067203c288/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Session" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;And&gt;
+    &lt;Project Location="/Users/davidbrima/Zen-Protocol-Testing-Development/FsBech32/src/FsBech32.Tests" Presentation="&amp;lt;FsBech32.Tests&amp;gt;" /&gt;
+    &lt;Namespace&gt;FsBech32.Tests&lt;/Namespace&gt;
+  &lt;/And&gt;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
