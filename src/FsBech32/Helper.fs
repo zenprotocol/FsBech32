@@ -29,7 +29,7 @@ let validate: string -> option<string> =
     foldOpt aux (None, Seq.empty)
     >> Option.map (snd >> Seq.rev >> Array.ofSeq >> System.String)
 
-let convertBits (data: array<byte>) (fromBits:int) (toBits:int) (maybePad:bool) : option< array<byte> > =
+let convertBits (data: byte[]) (fromBits:int) (toBits:int) (maybePad:bool) : option<byte[]> =
            
     let mutable value = 0ul
     let mutable bits = 0

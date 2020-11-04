@@ -2,7 +2,7 @@
 
 open FsBech32.Helper
 
-let private polymod (values:array<byte>) : uint32 =
+let private polymod (values:byte[]) : uint32 =
     let generator = [| 0x3b6a57b2ul; 0x26508e6dul; 0x1ea119faul; 0x3d4233ddul; 0x2a1462b3ul |]
     let mutable chk = 1ul
     for v in values do
@@ -14,7 +14,7 @@ let private polymod (values:array<byte>) : uint32 =
             else chk <- chk ^^^ 0ul
     chk
 
-let private expandHrp (hrp:string) : array<byte> =
+let private expandHrp (hrp:string) : byte[] =
     Array.concat [ 
         [| for c in hrp do yield (byte c) >>> 5 |]
         [| 0uy |]
@@ -60,11 +60,19 @@ let decode bech : option< string * array<byte> > =
                     None 
                 else
                     let hrp = bech.[..(pos-1)]
-                    let data = [| for w in words do yield byte (Base32.charsetRev.[int w]) |]
-                    if not (verifyChecksum hrp data) then                                                
+                    let data =
+                        [ for w in words do yield Base32.charsetRev.[int w] ]
+                        |> FSharpx.Option.sequence
+                        |> Option.map List.toArray
+
+                    match data with     
+                    | Some data ->
+                        if not (verifyChecksum hrp data) then                                                
+                            None 
+                        else                         
+                            Some (hrp, Array.take (data.Length - 6) data)
+                    | None ->
                         None 
-                    else                         
-                        Some (hrp, Array.take (data.Length - 6) data)
     with 
         | _ -> None
 

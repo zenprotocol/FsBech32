@@ -1,7 +1,7 @@
 ﻿module FsBech32.Tests.SegWitAddressTests
 
-open Xunit
-open FsUnit.Xunit
+open NUnit.Framework
+open FsUnit
 open FsBech32
 
 let validAddresses = 
@@ -28,7 +28,7 @@ let invalidAddresses =
         "bc1gmk9yu";
     ]         
 
-[<Fact>]
+[<Test>]
 let ``valid segwit addresses``() = 
     List.iter (fun (bech32, data) -> 
         match SegWitAddress.decode bech32 with 
@@ -39,7 +39,7 @@ let ``valid segwit addresses``() =
             SegWitAddress.encode hrp version data' |> should equal (bech32.ToLower())                  
     ) validAddresses
     
-[<Fact>]
+[<Test>]
 let ``invalid addresses``() = 
     List.iter (fun bech32 ->
         SegWitAddress.decode bech32 |> should equal None) invalidAddresses

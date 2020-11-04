@@ -46,6 +46,9 @@
   </Choose>
   <Import Project="$(FSharpTargetsPath)" Condition="Exists('$(FSharpTargetsPath)')" />
   <ItemGroup>
+    <Reference Include="FSharpx.Extras, Version=2.3.2.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\FSharpx.Extras\lib\netstandard2.0\FSharpx.Extras.dll</HintPath>
+    </Reference>
     <Reference Include="mscorlib" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -62,6 +65,7 @@
   <ItemGroup>
     <Content Include="paket.references" />
     <Content Include="paket.template" />
+    <Content Include="app.config" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
